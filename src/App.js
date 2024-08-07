@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import Dashboard from "./components/Dashboard";
+import "./App.css";
 
-function App() {
+import { PrimeReactProvider } from "primereact/api";
+import "primereact/resources/themes/md-light-indigo/theme.css";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <PrimeReactProvider>
+        <Header />
+        <Sidebar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/team" element={<h1>Manage Team</h1>} />
+            <Route path="/contacts" element={<h1>Contacts Information</h1>} />
+            <Route path="/invoices" element={<h1>Invoices Balances</h1>} />
+            <Route path="/bar" element={<h1>Bar Chart</h1>} />
+          </Routes>
+        </main>
+      </PrimeReactProvider>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,14 @@
+/* styles.css */
+.custom-datatable .p-datatable-thead > tr > th {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+.custom-datatable .p-datatable-tbody > tr > td {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+.custom-datatable .p-datatable-tbody > tr:nth-child(even) > td {
+  background-color: #444 !important;
+}

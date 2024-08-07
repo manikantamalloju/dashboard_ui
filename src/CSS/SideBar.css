@@ -1,0 +1,130 @@
+/* General styles */
+.sidebar {
+  width: 80px;
+  background-color: #1f2029;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s;
+}
+
+.menuIcon {
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.profile {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.profileAvatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profileInfo {
+  display: none;
+}
+
+.sidebarLink {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebarLinkSpan {
+  display: none;
+}
+
+.sidebarLink:hover {
+  background-color: #333;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  padding-left: 20px; /* Adjust as needed */
+}
+
+li {
+  color: #fff; /* Ensure text color is visible */
+  padding: 5px 0; /* Add spacing around list items */
+}
+
+.sidebarLi {
+  padding: 10px;
+  color: #fff;
+}
+
+.sidebarLiActive {
+  background-color: #4b4b6b;
+}
+
+/* Expanded sidebar styles */
+.sidebar.expanded {
+  width: 250px;
+}
+
+.sidebar.expanded .profileInfo,
+.sidebar.expanded .sidebarLinkSpan {
+  display: block;
+}
+
+/* Mobile view styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Full-width sidebar on mobile */
+    height: 50px; /* Adjust height based on content */
+    bottom: 0; /* Position at the bottom */
+    top: auto; /* Remove top positioning */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+  }
+
+  .menuIcon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  nav {
+    width: 100%;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sidebarLink {
+    display: flex; /* Ensure the icon is visible */
+    align-items: center; /* Center icon vertically */
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .sidebarLinkSpan {
+    display: none; /* Hide text on mobile */
+  }
+
+  .sidebar.expanded .sidebarLink {
+    display: flex;
+  }
+
+  .sidebar.expanded .sidebarLinkSpan {
+    display: block;
+  }
+}
